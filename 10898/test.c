@@ -6,14 +6,14 @@ int price[10], combo[10][10], comboPrice[10], order[10][10];
 
 int main(){
 	int I, C, O; // I for item count, C for combo count, O for order count
-	int temp = 0;
+	int temp;
 
 	while(scanf("%d", &I) != EOF){
-		memset(dp, 0, 1000000);
-		memset(price, 0, 10);
-		memset(combo, 0, 100);
-		memset(comboPrice, 0, 10);
-		memset(order, 0, 100);
+		memset(dp, 0, 1000000 * sizeof(int));
+		memset(price, 0, 10 * sizeof(int));
+		memset(combo, 0, 100 * sizeof(int));
+		memset(comboPrice, 0, 10 * sizeof(int));
+		memset(order, 0, 100 * sizeof(int));
 
 		for(int i = 0; i < I; i++){ // scan item
 			scanf("%d", &price[i]);
@@ -30,25 +30,6 @@ int main(){
 			for(int j = 0; j < I; j++){
 				scanf("%d", &order[i][j]);
 			}
-		}
-
-		fprintf(stderr, "%d", I);
-		for(int i = 0; i < I; i++){ // item
-			fprintf(stderr, " %d", price[i]);
-		}
-		fprintf(stderr, "\n%d\n", C); // combo
-		for(int i = 0; i < C; i++){
-			for(int j = 0; j < I; j++){
-				fprintf(stderr, "%d ", combo[i][j]);
-			}
-			fprintf(stderr, "%d\n", comboPrice[i]);
-		}
-		fprintf(stderr, "%d\n", O); // order
-		for(int i = 0; i < O; i++){
-			for(int j = 0; j < I; j++){
-				fprintf(stderr, "%d ", order[i][j]);
-			}
-			fprintf(stderr, "\n");
 		}
 
 		for(int a = 0; a < 10; a++){
