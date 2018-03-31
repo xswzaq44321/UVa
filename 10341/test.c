@@ -10,7 +10,7 @@ double f(double x){
 int main(){
 	while(scanf("%lf %lf %lf %lf %lf %lf", &p, &q, &r, &s, &t, &u) != EOF){
 		double left = 0, right = 1, middle;
-		while(right - left < 0.00001){
+		while(right - left > 1e-9){
 			middle = (left + right) / 2;
 			if(f(middle) > 0){
 				left = middle;
@@ -18,11 +18,11 @@ int main(){
 				right = middle;
 			}
 		}
-		printf("[%lf]\n", middle);
-		if(middle == 0 || middle == 1){
+		fprintf(stderr, "[%lf]\n", f(middle));
+		if(fabs(f(middle)) > 1e-4){
 			printf("No solution\n");
 			continue;
 		}
-		printf("%lf", middle);
+		printf("%.4lf\n", middle);
 	}
 }
