@@ -1,0 +1,11 @@
+(hw2)
+UVA-10035	use C++ to compile
+(hw3)
+UVA-11407	line 21: "\r\n" -> "\n" (newline character error QQ)
+UVA-674		use C++ to compile
+(hw4)
+UVA-111		use C++ to compile
+UVA-231		use C++ to compile
+UVA-10341	use C++ to compile
+(hw7)
+UVA-11842.cpp -> UVA-10842.cpp (file name error)
